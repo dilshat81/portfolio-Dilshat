@@ -1,0 +1,149 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="About | Dilshat NURMAMAT" description="About Dilshat NURMAMAT">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="À propos"
+				tagline="Découvrez mon parcours et mes compétences."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/at-work.webp"
+					alt="Dilshat NURMAMAT at work"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">À propos de moi</h2>
+				<div class="content">
+					<p>
+						Hay , je suis Dilshat NURMAMAT, un concepteur développeur d'applications web 
+						reconversion professionnelle depuis 3 ans,
+						 j'ai acquis une solide expertise dans la conception, la mise en œuvre et l'optimisation
+						  de systèmes serveur. 
+						  <br>Mon objectif est de fournir des services performants et fiables qui 
+						  soutiennent la croissance et la réussite de mes clients.
+					</p>
+					
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Compétences clés</h2>
+				<div class="content">
+					<p> <samp style="font-weight: bold;">Langages de programmation :</samp>Je maîtrise plusieurs langages, notamment PHP, Symfony, , et JavaScript, Angular, Java ce qui me permet de choisir la meilleure technologie pour chaque projet.<br>
+
+						<br><samp style="font-weight: bold;">Bases de données :</samp> J'ai une expertise dans la conception de bases de données relationnelles SQL et NoSQL, avec une expérience approfondie dans l'optimisation des requêtes et la gestion des données à grande échelle.<br>
+						
+						<br><samp style="font-weight: bold;">API et Web Services :</samp> Je suis compétent dans la création d'API RESTful , ainsi que dans l'intégration de services tiers via des webhooks.<br>
+						
+						<br><samp style="font-weight: bold;">Sécurité :</samp> Je prends la sécurité au sérieux et suis familier avec les meilleures pratiques en matière de sécurité des applications, y compris l'authentification, l'autorisation et la gestion des menaces.<br>
+						
+						
+						<br><samp style="font-weight: bold;">Tests et débogage : </samp>Je suis rigoureux en matière de tests unitaires, d'intégration et de débogage pour garantir la stabilité et la qualité du code.</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Skills</h2>
+				<div class="content">
+
+					<p><samp style="font-weight: bold;">Résolution de problèmes :</samp> La capacité à analyser les problèmes de manière critique et à trouver des solutions créatives est essentielle pour résoudre les défis techniques.<br>
+
+						<br><samp style="font-weight: bold;">Pensée analytique :</samp> Pouvoir décomposer un problème complexe en étapes plus simples pour le comprendre en profondeur.<br>
+						
+						<br><samp style="font-weight: bold;">Communication : </samp>La communication claire et efficace est cruciale, que ce soit pour collaborer avec des collègues, expliquer des concepts techniques à des non-techniciens ou interagir avec des clients.<br>
+						
+						<br><samp style="font-weight: bold;">Travail d'équipe : </samp>La capacité à travailler en équipe, à partager des idées et à collaborer avec d'autres personnes pour atteindre un objectif commun.<br>
+						
+						<br><samp style="font-weight: bold;">Gestion du temps : </samp> La capacité à gérer efficacement son temps et à hiérarchiser les tâches pour respecter les délais.<br>
+						
+						<br><samp style="font-weight: bold;">Auto-apprentissage : </samp> Être capable d'apprendre de nouvelles compétences et de s'adapter rapidement aux évolutions technologiques.<br>
+						
+						<br><samp style="font-weight: bold;">Gestion du stress : </samp> Pouvoir gérer le stress et la pression qui peuvent accompagner les échéances serrées ou les problèmes techniques.<br>
+						
+						<br><samp style="font-weight: bold;">Adaptabilité : </samp> Être ouvert au changement et capable de s'adapter à de nouvelles technologies, méthodologies ou environnements de travail.
+
+						<br><samp style="font-weight: bold;">Diplômes: </samp> Bac+3/4 Concepteur Développeur d'Applications(RNVP),Bac+2 Développeur Web et Web Mobile
+
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Diplômes</h2>
+				<div class="content">
+
+						<samp style="font-weight: bold;"> </samp> Bac+3/4 Concepteur Développeur d'Applications(RNVP), Bac+2 Développeur Web et Web Mobile
+
+					</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
+
